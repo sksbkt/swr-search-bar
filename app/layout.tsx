@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import SearchInput from '@/app/Components/SearchInput'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-zinc-900 text-zinc-200">
+        <div className='flex flex-col items-center gap-10 p-6'>
+          <SearchInput />
+          <div className='flex flex-col items-center w-full'>
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
